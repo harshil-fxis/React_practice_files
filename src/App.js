@@ -26,11 +26,35 @@ import ParentCompo from './components/ParentCompo';
 import RefDemo from './components/RefDemo';
 import FocusInput from './components/FocusInput';
 import PortalDemo from './components/PortalDemo';
+import Hero from './components/Hero';
+import ErrorBoundary from './components/ErrorBoundary';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import User from './components/User';
+import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/UserContext';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <PortalDemo />
+        <UserProvider value='Harshil'>
+          <ComponentC />
+        </UserProvider>
+        {/* <User render={ (isLoggedIn) => isLoggedIn ? 'Harshil' : 'Guest'}/> */}
+        {/* <ClickCounter name='Harshil'/>
+        <HoverCounter /> */}
+        {/* <ErrorBoundary>
+          <Hero heroName='Batman'/>
+        </ErrorBoundary>
+
+        <ErrorBoundary>
+          <Hero heroName='Superman'/>
+        </ErrorBoundary>
+
+        <ErrorBoundary>
+          <Hero heroName='Joker'/>
+        </ErrorBoundary> */}
+        {/* <PortalDemo /> */}
         {/* <FocusInput /> */}
         {/* <RefDemo /> */}
         {/* <ParentCompo /> */}
